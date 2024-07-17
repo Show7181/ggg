@@ -216,6 +216,12 @@ footer p {
     }
     nav ul.active {
         display: flex;
+        transition: transform 0.3s ease; /* For smooth opening */
+        transform: translateY(0); /* Ensure it's visible */
+    }
+    nav ul.closing {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease; /* For smooth closing */
     }
     nav ul li {
         margin: 10px 0;
@@ -235,7 +241,7 @@ footer p {
     }
     #burger-menu {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 15px;
         right: 20px;
         font-size: 1.5em;

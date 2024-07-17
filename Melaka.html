@@ -61,7 +61,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-left: 10px;
-    position: relative; /* Ensure dropdown positioning */
+    position: relative; 
 }
 
 nav ul li a {
@@ -81,7 +81,7 @@ nav ul li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #5c6bc0; /* Match header background */
+    background-color: #5c6bc0; 
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -104,8 +104,8 @@ nav ul li:hover .dropdown-content {
 }
 
 footer {
-    background-color: #ccc; /* Light gray color */
-    color: #666; /* Darker gray text color */
+    background-color: #ccc; 
+    color: #666; 
     padding: 10px 0;
     text-align: center;
     font-size: 0.8em;
@@ -128,7 +128,7 @@ footer p {
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            cursor: pointer; /* Add cursor pointer for clickable images */
+            cursor: pointer; 
         }
 
         .gallery {
@@ -156,14 +156,14 @@ footer p {
 
         /* Modal Styles */
         .modal {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
-            z-index: 9999; /* Ensure it's on top */
-            padding-top: 100px; /* Location of the box */
+            z-index: 9999; 
+            padding-top: 100px; 
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            width: 100%; 
+            height: 100%; 
             overflow: auto; /* Enable scroll if needed */
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
@@ -216,6 +216,12 @@ footer p {
     }
     nav ul.active {
         display: flex;
+        transition: transform 0.3s ease; /* For smooth opening */
+        transform: translateY(0); /* Ensure it's visible */
+    }
+    nav ul.closing {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease; /* For smooth closing */
     }
     nav ul li {
         margin: 10px 0;
@@ -235,7 +241,7 @@ footer p {
     }
     #burger-menu {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 15px;
         right: 20px;
         font-size: 1.5em;
@@ -269,6 +275,15 @@ footer p {
         <div class="image-container">
             <h2>Melaka</h2>
             <div class="gallery">
+                <div class="gallery-item">
+                    <img src="image/1.png" alt="Melaka">
+                </div>
+                <div class="gallery-item">
+                    <img src="image/1.png" alt="Melaka">
+                </div>
+                <div class="gallery-item">
+                    <img src="image/1.png" alt="Melaka">
+                </div>
                 <div class="gallery-item">
                     <img src="image/1.png" alt="Melaka">
                 </div>
