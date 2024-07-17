@@ -61,7 +61,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-left: 10px;
-    position: relative; /* Ensure dropdown positioning */
+    position: relative; 
 }
 
 nav ul li a {
@@ -76,6 +76,8 @@ nav ul li a {
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+
 
 /* Dropdown Styles */
 .dropdown-content {
@@ -131,6 +133,11 @@ footer p {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+@media (min-width: 768px) {
+    #burger-menu{
+        color: #5c6bc0;
+    }
+}
 /* Responsive Layout */
 @media (max-width: 768px) {
     header {
@@ -184,6 +191,7 @@ footer p {
         font-size: 1.5em;
         cursor: pointer;
         z-index: 2;
+       
     }
 }
 
