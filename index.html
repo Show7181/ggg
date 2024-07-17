@@ -6,122 +6,197 @@
     <title>Travel Image Gallery</title>
     <style>
         /* Global Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        header {
-            background-color: #5c6bc0; /* Purple color */
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 1.5em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            flex: 1;
-            text-align: left;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-        }
-        nav ul li {
-            display: inline;
-            margin-left: 10px;
-            position: relative; /* Ensure dropdown positioning */
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            display: block;
-        }
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        /* Dropdown Styles */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #5c6bc0; /* Match header background */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #fff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        nav ul li:hover .dropdown-content {
-            display: block;
-        }
-        footer {
-            background-color: #ccc; /* Light gray color */
-            color: #666; /* Darker gray text color */
-            padding: 10px 0;
-            text-align: center;
-            font-size: 0.8em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer p {
-            margin: 0;
-        }
-        /* Content Styles */
-        .image-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+      /* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    background-color: #5c6bc0; /* Purple color */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    flex: 1;
+    text-align: left;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+    position: relative; /* Ensure dropdown positioning */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #5c6bc0; /* Match header background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    background-color: #ccc; /* Light gray color */
+    color: #666; /* Darker gray text color */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Content Styles */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2em;
+    }
+    .container {
+        padding: 10px;
+    }
+    nav ul {
+        display: none; /* Hide navigation links by default on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #5c6bc0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: #5c6bc0;
+        box-shadow: none;
+        margin-top: 5px;
+    }
+    .dropdown-content a {
+        padding: 10px 15px;
+    }
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    #burger-menu {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5em;
+        cursor: pointer;
+        z-index: 2;
+    }
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Travel</h1>
+        <div class="logo">
+            <h1>Jom自己人</h1>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
+            <div id="burger-menu" onclick="toggleMenu()">&#9776;</div> <!-- Burger menu icon -->
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li>
                     <a href="#">Destinations</a>
                     <div class="dropdown-content">
                         <a href="Melaka.html">Melaka</a>
                         <a href="Genting.html">Genting</a>
-                        
                     </div>
                 </li>
                 <li><a href="Contact.html">Contact</a></li>
@@ -138,7 +213,26 @@
     </div>
     
     <footer>
-        <p>&copy; 2024 Travel Image Gallery. All rights reserved.</p>
+        <p>&copy; 2024 sg kid. All rights reserved.</p>
     </footer>
+<script>
+   function toggleMenu() {
+    var nav = document.getElementById("nav-links");
+    var isActive = nav.classList.toggle("active");
+
+    if (isActive) {
+        // Set a delay before automatically hiding the menu
+        setTimeout(function() {
+            // Remove the active class to hide the menu
+            nav.classList.remove("active");
+        }, 10000); // Adjust the delay as needed (in milliseconds)
+    }
+}
+
+
+
+</script>
 </body>
 </html>
+
+
